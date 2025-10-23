@@ -5,29 +5,29 @@ abstract class Persona {
     protected String cedula;
     protected LocalDate fechaNacimiento;
 
-    protected Persona(String nombre, String cedula, LocalDate fechaNacimiento) {
+    public Persona(String nombre, String cedula, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    protected String getNombre() {
+    public String getNombre() {
         return nombre;
     }
-    protected String getCedula() {
+    public String getCedula() {
         return cedula;
     }
-    protected LocalDate getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    protected void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    protected void setCedula(String cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
-    protected void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 }
