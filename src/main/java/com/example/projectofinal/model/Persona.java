@@ -1,3 +1,5 @@
+package com.example.projectofinal.model;
+
 import java.time.LocalDate;
 
 abstract class Persona {
