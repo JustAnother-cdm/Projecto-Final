@@ -7,15 +7,15 @@ public class Estudiante extends Persona {
 
     private String matricula;
     public String [][] horario = new String [7][4];
-    public ArrayList<Boolean> Asistencia;
+    public ArrayList<Boolean> asistencia;
     public String progreso;
     public Profesor theProfesor;
 
 
 
-    public Estudiante(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> Asistencia, String progreso, Profesor theProfesor) {
+    public Estudiante(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> asistencia, String progreso, Profesor theProfesor) {
         super(nombre, cedula, fechaNacimiento);
-        this.Asistencia = Asistencia;
+        this.asistencia = asistencia;
         this.horario = horario;
         this.matricula = matricula;
         this.progreso = progreso;
@@ -39,11 +39,11 @@ public class Estudiante extends Persona {
     }
 
     public ArrayList<Boolean> getAsistencia() {
-        return Asistencia;
+        return asistencia;
     }
 
     public void setAsistencia(ArrayList<Boolean> asistencia) {
-        Asistencia = asistencia;
+        this.asistencia =asistencia;
     }
 
     public String getProgreso() {
@@ -54,18 +54,19 @@ public class Estudiante extends Persona {
         this.progreso = progreso;
     }
 
-    public void actualizarDatos(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> Asistencia, String progreso) {
-        setNombre(nombre);
-        setCedula(cedula);
-        setFechaNacimiento(fechaNacimiento);
-        setAsistencia(Asistencia);
-        setMatricula(matricula);
-        setHorario(horario);
-        setProgreso(progreso);
+    public void actualizarDatos(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> asistencia, String progreso) {
+        if(nombre!= null) setNombre(nombre);
+        if(cedula!= null)setCedula(cedula);
+        if(fechaNacimiento!= null)setFechaNacimiento(fechaNacimiento);
+        if(asistencia!= null)setAsistencia(asistencia);
+        if(matricula!= null)setMatricula(matricula);
+        if(horario!= null)setHorario(horario);
+        if(progreso!= null)setProgreso(progreso);
     }
 
     public String [][] consultarHorario() {
         return getHorario();
     }
+
 
 }
