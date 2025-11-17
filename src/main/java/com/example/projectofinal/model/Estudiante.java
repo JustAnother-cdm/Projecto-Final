@@ -9,15 +9,17 @@ public class Estudiante extends Persona {
     public String [][] horario = new String [7][4];
     public ArrayList<Boolean> Asistencia;
     public String progreso;
+    public Profesor theProfesor;
 
 
 
-    public Estudiante(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> Asistencia, String progreso) {
+    public Estudiante(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> Asistencia, String progreso, Profesor theProfesor) {
         super(nombre, cedula, fechaNacimiento);
         this.Asistencia = Asistencia;
         this.horario = horario;
         this.matricula = matricula;
         this.progreso = progreso;
+        this.theProfesor = theProfesor;
     }
 
     public String getMatricula() {
