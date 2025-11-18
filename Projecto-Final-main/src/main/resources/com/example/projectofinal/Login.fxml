@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox spacing="20" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.projectofinal.ViewController.LoginViewController"
+      style="-fx-padding: 30;">
+
+    <Label text="Academia de Música UQ" style="-fx-font-size: 22px;"/>
+
+    <Label text="Seleccione su rol:"/>
+
+    <ComboBox fx:id="comboRol" prefWidth="200"/>
+
+    <Button fx:id="btnIngresar" text="Ingresar" onAction="#ingresar" prefWidth="150"/>
+
+    <Label fx:id="lblError" textFill="red"/>
+
+</VBox>

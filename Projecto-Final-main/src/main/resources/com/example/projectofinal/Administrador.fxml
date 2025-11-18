@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.projectofinal.ViewController.AdministradorViewController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding: 25;">
+
+    <Label text="Panel del Administrador" style="-fx-font-size: 22px;"/>
+
+    <HBox spacing="40">
+
+        <VBox spacing="10">
+            <Label text="Instrumento del Curso"/>
+            <TextField fx:id="txtInstCurso"/>
+
+            <Label text="Nivel del Curso"/>
+            <TextField fx:id="txtNivelCurso"/>
+
+            <Label text="Aula"/>
+            <TextField fx:id="txtAula"/>
+
+            <Button text="Crear Curso" onAction="#crearCurso"/>
+        </VBox>
+
+        <Separator orientation="VERTICAL"/>
+
+        <VBox spacing="10">
+            <Label text="Modificar Estudiante"/>
+            <ComboBox fx:id="comboEstudiantes" prefWidth="200"/>
+            <Button text="Modificar" onAction="#modificarEstudiante"/>
+        </VBox>
+
+        <Separator orientation="VERTICAL"/>
+
+        <VBox spacing="10">
+            <Label text="Modificar Profesor"/>
+            <ComboBox fx:id="comboProfesores" prefWidth="200"/>
+            <Button text="Modificar" onAction="#modificarProfesor"/>
+        </VBox>
+
+    </HBox>
+
+    <Separator/>
+
+    <VBox spacing="10" prefWidth="400">
+        <Button text="Reporte Ocupación de Aulas" onAction="#reporteOcupacion"/>
+        <Label fx:id="lblReporte" wrapText="true"/>
+    </VBox>
+
+</VBox>

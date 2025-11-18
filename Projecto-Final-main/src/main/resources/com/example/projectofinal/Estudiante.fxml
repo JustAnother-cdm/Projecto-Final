@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.projectofinal.viewController.EstudianteViewController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding: 25;">
+
+    <Label text="Panel del Estudiante" style="-fx-font-size: 22px;"/>
+
+    <HBox spacing="10">
+        <VBox spacing="10">
+            <Label text="ID"/>
+            <TextField fx:id="txtId"/>
+
+            <Label text="Nombre"/>
+            <TextField fx:id="txtNombre"/>
+
+            <Label text="Edad"/>
+            <TextField fx:id="txtEdad"/>
+
+            <Button text="Registrar Estudiante" onAction="#registrarEstudiante"/>
+        </VBox>
+
+        <Separator orientation="VERTICAL"/>
+
+        <VBox spacing="10">
+            <Label text="Cursos Disponibles"/>
+            <ComboBox fx:id="comboCursosDisponibles" prefWidth="200"/>
+
+            <Button text="Inscribir en Curso" onAction="#inscribirCurso"/>
+
+            <Button text="Consultar Horario" onAction="#mostrarHorario"/>
+            <Label fx:id="lblHorario"/>
+
+            <Button text="Consultar Progreso" onAction="#mostrarProgreso"/>
+            <Label fx:id="lblProgreso"/>
+        </VBox>
+    </HBox>
+
+</VBox>

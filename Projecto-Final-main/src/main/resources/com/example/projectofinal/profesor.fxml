@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.projectofinal.ViewController.ProfesorViewController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding: 25;">
+
+    <Label text="Panel del Profesor" style="-fx-font-size: 22px;"/>
+
+    <HBox spacing="20">
+
+        <VBox spacing="10">
+            <Label text="ID Profesor"/>
+            <TextField fx:id="txtIdProf"/>
+
+            <Label text="Nombre"/>
+            <TextField fx:id="txtNombreProf"/>
+
+            <Button text="Registrar Profesor" onAction="#registrarProfesor"/>
+        </VBox>
+
+        <Separator orientation="VERTICAL"/>
+
+        <VBox spacing="10">
+            <Label text="Horario Disponible"/>
+            <TextField fx:id="txtHorarioNuevo" promptText="Ej: Lunes 2pm"/>
+
+            <Button text="Agregar Horario" onAction="#agregarHorario"/>
+        </VBox>
+
+        <Separator orientation="VERTICAL"/>
+
+        <VBox spacing="10">
+            <Label text="Cursos Asignados"/>
+            <ComboBox fx:id="comboCursosProfesor" prefWidth="180"/>
+
+            <Button text="Crear Clase Grupal" onAction="#crearClaseGrupal"/>
+
+            <Label text="ID Estudiante"/>
+            <TextField fx:id="txtIdEstudiante"/>
+
+            <Button text="Registrar Asistencia" onAction="#registrarAsistencia"/>
+
+            <Label text="Valoración"/>
+            <TextField fx:id="txtValoracion"/>
+
+            <Button text="Registrar Valoración" onAction="#registrarValoracion"/>
+        </VBox>
+
+    </HBox>
+
+</VBox>
