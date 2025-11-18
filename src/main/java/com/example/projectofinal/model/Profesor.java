@@ -7,6 +7,7 @@ public class Profesor extends Persona {
     public String[][] horarios = new String[7][4];
     public ArrayList<Boolean> asistencia;
     public ArrayList<Estudiante> listEstudiante;
+    public Administrador theAdministrador;
 
     public Profesor(String nombre, String cedula, LocalDate fechaNacimiento, String[][] horarios, ArrayList<Estudiante> listEstudiante) {
         super(nombre, cedula, fechaNacimiento);
