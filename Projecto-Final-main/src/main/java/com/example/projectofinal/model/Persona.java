@@ -2,7 +2,8 @@ package com.example.projectofinal.model;
 
 import java.time.LocalDate;
 
-abstract class Persona {
+public abstract class Persona {
+
     protected String nombre;
     protected String cedula;
     protected LocalDate fechaNacimiento;
@@ -16,19 +17,23 @@ abstract class Persona {
     public String getNombre() {
         return nombre;
     }
-    public String getCedula() {
-        return cedula;
-    }
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String getCedula() {
+        return cedula;
+    }
+
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }

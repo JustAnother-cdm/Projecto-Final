@@ -1,51 +1,35 @@
 package com.example.projectofinal.model;
 
+import javafx.beans.property.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-public class Profesor extends Persona {
-    public String[][] horarios = new String[7][4];
-    public ArrayList<Boolean> asistencia;
-    public ArrayList<Estudiante> listEstudiante;
+public class Profesor {
 
-    public Profesor(String nombre, String cedula, LocalDate fechaNacimiento, String[][] horarios, ArrayList<Estudiante> listEstudiante) {
-        super(nombre, cedula, fechaNacimiento);
-        this.horarios = horarios;
-        this.asistencia = new ArrayList<>();
-        this.listEstudiante = listEstudiante;
+    private final StringProperty nombre;
+    private final StringProperty cedula;
+    private final ObjectProperty<LocalDate> fechaNacimiento;
+    private final StringProperty especialidad;
+
+    public Profesor(String nombre, String cedula, LocalDate fechaNacimiento, String especialidad) {
+        this.nombre = new SimpleStringProperty(nombre);
+        this.cedula = new SimpleStringProperty(cedula);
+        this.fechaNacimiento = new SimpleObjectProperty<>(fechaNacimiento);
+        this.especialidad = new SimpleStringProperty(especialidad);
     }
 
-    public String[][] getHorarios() {
-        return horarios;
-    }
+    public String getNombre() { return nombre.get(); }
+    public void setNombre(String n) { nombre.set(n); }
+    public StringProperty nombreProperty() { return nombre; }
 
-    public void setHorarios(String[][] horarios) {
-        this.horarios = horarios;
-    }
+    public String getCedula() { return cedula.get(); }
+    public void setCedula(String c) { cedula.set(c); }
+    public StringProperty cedulaProperty() { return cedula; }
 
-    public ArrayList<Boolean> getAsistencia() {
-        return this.asistencia;
-    }
+    public LocalDate getFechaNacimiento() { return fechaNacimiento.get(); }
+    public void setFechaNacimiento(LocalDate f) { fechaNacimiento.set(f); }
+    public ObjectProperty<LocalDate> fechaNacimientoProperty() { return fechaNacimiento; }
 
-    public void setAsistencia(ArrayList<Boolean> asistencia) {
-        this.asistencia = asistencia;
-    }
-
-    public ArrayList<Estudiante> getListEstudiante() {
-        return listEstudiante;
-    }
-
-    public void setListEstudiante(ArrayList<Estudiante> listEstudiante) {
-        this.listEstudiante = listEstudiante;
-    }
-    public ArrayList<Estudiante> RegistrarAsistencia() {
-        ArrayList<Estudiante> asistenciaEstudiantes = new ArrayList<>();
-        for (Estudiante e : listEstudiante) {
-            if (!e.asistencia.isEmpty() && e.asistencia.get(e.asistencia.size() - 1)) {
-                asistenciaEstudiantes.add(e);
-            }
-        }
-        return asistenciaEstudiantes;
-    }
-
+    public String getEspecialidad() { return especialidad.get(); }
+    public void setEspecialidad(String e) { especialidad.set(e); }
+    public StringProperty especialidadProperty() { return especialidad; }
 }

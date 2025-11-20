@@ -1,44 +1,25 @@
 package com.example.projectofinal.model;
 
-import java.time.LocalDate;
-
 public class ReglaNegocio {
-    public int capacidadGrupos;
-    public boolean conflictosHorarios;
-    public LocalDate cierreCiclo;
-    public boolean preRequisitos;
 
-    public ReglaNegocio(boolean preRequisitos, LocalDate cierreCiclo, int capacidadGrupos) {
-        this.preRequisitos = preRequisitos;
+    private int capacidadGrupos;
+    private boolean conflictoHorario;
+    private boolean prerequisitosNivel;
+    private int clasesIndividuales;
+    private boolean cierreCiclo;
+
+    public ReglaNegocio(int capacidadGrupos, boolean conflictoHorario, boolean prerequisitosNivel,
+                        int clasesIndividuales, boolean cierreCiclo) {
+        this.capacidadGrupos = capacidadGrupos;
+        this.conflictoHorario = conflictoHorario;
+        this.prerequisitosNivel = prerequisitosNivel;
+        this.clasesIndividuales = clasesIndividuales;
         this.cierreCiclo = cierreCiclo;
-        this.capacidadGrupos = capacidadGrupos;
     }
 
-    public int getCapacidadGrupos() {
-        return capacidadGrupos;
-    }
-
-    public boolean isConflictosHorarios() {
-        return conflictosHorarios;
-    }
-
-    public LocalDate getCierreCiclo() {
-        return cierreCiclo;
-    }
-
-    public boolean isPreRequisitos() {
-        return preRequisitos;
-    }
-
-    public void setPreRequisitos(boolean preRequisitos) {
-        this.preRequisitos = preRequisitos;
-    }
-
-    public void setConflictosHorarios(boolean conflictosHorarios) {
-        this.conflictosHorarios = conflictosHorarios;
-    }
-
-    public void setCapacidadGrupos(int capacidadGrupos) {
-        this.capacidadGrupos = capacidadGrupos;
-    }
+    public int getCapacidadGrupos() { return capacidadGrupos; }
+    public boolean isConflictoHorario() { return conflictoHorario; }
+    public boolean isPrerequisitosNivel() { return prerequisitosNivel; }
+    public int getClasesIndividuales() { return clasesIndividuales; }
+    public boolean isCierreCiclo() { return cierreCiclo; }
 }

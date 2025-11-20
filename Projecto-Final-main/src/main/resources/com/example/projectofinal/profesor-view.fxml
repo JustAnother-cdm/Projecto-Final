@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.projectofinal.ProfesorController">
+
+    <VBox spacing="10" layoutX="20" layoutY="20">
+
+        <TextField fx:id="txtNombre" promptText="Nombre"/>
+        <TextField fx:id="txtCedula" promptText="Cédula"/>
+        <TextField fx:id="txtEsp" promptText="Especialidad"/>
+        <DatePicker fx:id="dateNacimiento"/>
+
+        <Button text="Crear" onAction="#agregarProfesor"/>
+
+        <TableView fx:id="tablaProfesores" prefWidth="400">
+            <columns>
+                <TableColumn text="Nombre" fx:id="colNombre"/>
+                <TableColumn text="Cédula" fx:id="colCedula"/>
+                <TableColumn text="Especialidad" fx:id="colEspecialidad"/>
+            </columns>
+        </TableView>
+
+    </VBox>
+
+</AnchorPane>

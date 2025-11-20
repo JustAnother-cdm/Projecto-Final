@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.projectofinal.CursoInstrumentoController">
+    <VBox spacing="8" layoutX="10" layoutY="10">
+        <Label text="Cursos"/>
+        <HBox spacing="8">
+            <ComboBox fx:id="comboTipo" promptText="Tipo"/>
+            <ComboBox fx:id="comboNivel" promptText="Nivel"/>
+            <TextField fx:id="txtHorario" promptText="Horario"/>
+            <TextField fx:id="txtAula" promptText="Aula"/>
+            <TextField fx:id="txtCapacidad" promptText="Capacidad"/>
+            <ComboBox fx:id="comboProfesor" promptText="Profesor"/>
+            <Button text="Crear Curso" onAction="#agregarInstrumento"/>
+        </HBox>
+
+        <TableView fx:id="tablaInstrumentos" prefHeight="300">
+            <columns>
+                <TableColumn text="Tipo" fx:id="colTipo"/>
+                <TableColumn text="Nivel" fx:id="colNivel"/>
+                <TableColumn text="Horario" fx:id="colHorario"/>
+                <TableColumn text="Aula" fx:id="colAula"/>
+                <TableColumn text="Capacidad" fx:id="colCapacidad"/>
+                <TableColumn text="Profesor" fx:id="colProfesor"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

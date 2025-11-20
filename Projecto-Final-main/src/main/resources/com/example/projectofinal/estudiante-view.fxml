@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.projectofinal.EstudianteController">
+    <VBox spacing="8" layoutX="10" layoutY="10" prefWidth="600">
+        <Label text="Registrar Estudiante"/>
+        <HBox spacing="8">
+            <TextField fx:id="txtNombre" promptText="Nombre"/>
+            <TextField fx:id="txtCedula" promptText="Cédula"/>
+            <Button text="Crear" onAction="#crearEstudiante"/>
+        </HBox>
+
+        <Separator/>
+
+        <Label text="Inscribir a curso"/>
+        <HBox spacing="8">
+            <ComboBox fx:id="comboEstudiantes" promptText="Estudiante"/>
+            <ComboBox fx:id="comboCursos" promptText="Curso"/>
+            <Button text="Inscribir" onAction="#inscribirSeleccion"/>
+        </HBox>
+
+        <TableView fx:id="tablaEstudiantes" prefHeight="300">
+            <columns>
+                <TableColumn text="Nombre" fx:id="colNombre"/>
+                <TableColumn text="Cédula" fx:id="colCedula"/>
+                <TableColumn text="Curso(s) Inscrito" fx:id="colCurso"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

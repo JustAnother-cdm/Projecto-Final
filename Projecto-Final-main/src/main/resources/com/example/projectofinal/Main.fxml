@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.projectofinal.MainController">
+    <VBox spacing="20" prefWidth="300" prefHeight="300" layoutX="50" layoutY="50">
+        <Label text="Menú Principal" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <Button text="Estudiantes" onAction="#openEstudiantes"/>
+        <Button text="Profesores" onAction="#openProfesores"/>
+        <Button text="Cursos" onAction="#openCursos"/>
+        <Button text="Administrador" onAction="#openAdmin"/>
+    </VBox>
+</AnchorPane>

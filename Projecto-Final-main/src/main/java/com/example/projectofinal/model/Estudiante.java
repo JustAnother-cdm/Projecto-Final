@@ -1,72 +1,69 @@
 package com.example.projectofinal.model;
 
+import javafx.beans.property.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Estudiante extends Persona {
 
-    private String matricula;
-    public String [][] horario = new String [7][4];
-    public ArrayList<Boolean> asistencia;
-    public String progreso;
-    public Profesor theProfesor;
+    private final StringProperty matricula;
+    private final StringProperty cursoActual;   
+    
+    private final List<CursoInstrumento> cursosAprobados = new ArrayList<>();
 
-
-
-    public Estudiante(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> asistencia, String progreso, Profesor theProfesor) {
+    public Estudiante(String nombre, String cedula, LocalDate fechaNacimiento,
+                      String matricula, String cursoActual) {
         super(nombre, cedula, fechaNacimiento);
-        this.asistencia = asistencia;
-        this.horario = horario;
-        this.matricula = matricula;
-        this.progreso = progreso;
-        this.theProfesor = theProfesor;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String[][] getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String[][] horario) {
-        this.horario = horario;
-    }
-
-    public ArrayList<Boolean> getAsistencia() {
-        return asistencia;
-    }
-
-    public void setAsistencia(ArrayList<Boolean> asistencia) {
-        this.asistencia =asistencia;
-    }
-
-    public String getProgreso() {
-        return progreso;
-    }
-
-    public void setProgreso(String progreso) {
-        this.progreso = progreso;
-    }
-
-    public void actualizarDatos(String nombre, String cedula, LocalDate fechaNacimiento, String matricula, String[][] horario, ArrayList<Boolean> asistencia, String progreso) {
-        if(nombre!= null) setNombre(nombre);
-        if(cedula!= null)setCedula(cedula);
-        if(fechaNacimiento!= null)setFechaNacimiento(fechaNacimiento);
-        if(asistencia!= null)setAsistencia(asistencia);
-        if(matricula!= null)setMatricula(matricula);
-        if(horario!= null)setHorario(horario);
-        if(progreso!= null)setProgreso(progreso);
-    }
-
-    public String [][] consultarHorario() {
-        return getHorario();
+        this.matricula = new SimpleStringProperty(matricula);
+        this.cursoActual = new SimpleStringProperty(cursoActual);
     }
 
 
+    public String getMatricula() { return matricula.get(); }
+    public void setMatricula(String v) { matricula.set(v); }
+    public StringProperty matriculaProperty() { return matricula; }
+
+    public String getCursoActual() { return cursoActual.get(); }
+    public void setCursoActual(String v) { cursoActual.set(v); }
+    public StringProperty cursoActualProperty() { return cursoActual; }
+
+
+   
+    public void aprobarCurso(CursoInstrumento curso) {
+        if (!cursosAprobados.contains(curso)) {
+            cursosAprobados.add(curso);
+        }
+    }
+
+
+    public List<CursoInstrumento> getCursosAprobados() {
+        return cursosAprobados;
+    }
+
+ 
+    public boolean haAprobadoNivelPrevio(CursoTipo tipo, Nivel nivelActual) {
+        Nivel nivelPrevio = nivelActual.siguiente() == null ? nivelActual : null;
+
+        
+        Nivel anterior = null;
+        for (Nivel n : Nivel.values()) {
+            if (n == nivelActual) break;
+            anterior = n;
+        }
+
+        if (anterior == null) return true; 
+
+        for (CursoInstrumento c : cursosAprobados) {
+            if (c.getTipo() == tipo && c.getNivel() == anterior) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " (" + cedula + ")";
+    }
 }

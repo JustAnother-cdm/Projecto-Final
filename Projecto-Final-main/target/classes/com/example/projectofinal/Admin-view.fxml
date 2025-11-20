@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.projectofinal.AdminController">
+    <VBox spacing="8" layoutX="10" layoutY="10">
+        <Label text="Administrador - Reportes"/>
+        <HBox spacing="8">
+            <ComboBox fx:id="comboTipoReporte" promptText="Tipo"/>
+            <ComboBox fx:id="comboNivelReporte" promptText="Nivel"/>
+            <Button text="Generar Progreso" onAction="#generarProgreso"/>
+            <Button text="Carga Docente" onAction="#generarCargaDocente"/>
+        </HBox>
+
+        <TextArea fx:id="txtAreaReportes" prefHeight="400"/>
+    </VBox>
+</AnchorPane>
